@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="~/la_mia_pizzeria_static.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <h1 class="text-center text-light">Pizzeria</h1>
-    <div class="container">
+    @Html.Partial("_Header")
+    <div class="container mt-5 pt-5">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-    <footer class="text-light position-absolute end-0 bottom-0 pe-2 pb-2">Jacopo Prudentino&copy;</footer>
+    @Html.Partial("_Footer")
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
