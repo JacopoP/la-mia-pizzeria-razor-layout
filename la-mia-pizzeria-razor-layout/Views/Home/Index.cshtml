@@ -1,8 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    string nome = "Jacopo";
+    string cognome = "Prudentino";
+    int Sommatoria(int n)
+    {
+        int result = 0;
+        if(n <= 0)
+        {
+            return 0;
+        }
+        for (; n > 1; n--)
+            result += n;
+        return result;
+    }
+    List < int > interi= new List<int>();
+    var rand = new Random();
+    for (int i = 0; i < 20; i++)
+        interi.Add(rand.Next(1, 90));
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div>
+    <h2>@nome @cognome</h2>
+    <span>@Sommatoria(5)</span>
+    <p>@("nel mezzo del cammin di nostra vita".Count(x => x == 'a'))</p>
+    <ul>
+        @foreach(int x in interi)
+        {
+            if(x >= 20 && x<= 70)
+            {
+                <li>@x</li>    
+            }
+        }
+    </ul>
+    <p>@DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")</p>
+    <p>@((DateTime.Now - new TimeSpan(7, 0, 0, 0)).ToString("yyyy/MM/dd HH:mm:ss"))</p>
+    <p>@DateTime.Now.DayOfWeek</p>
+    <p>@((new DateTime(DateTime.Now.Year + 1, DateTime.Now.Month, DateTime.Now.Day).DayOfWeek))</p>
 </div>
